@@ -12,10 +12,8 @@ def home():
 
 @app.route('/', methods=['POST'])
 def stress_cpu():
-    script_path = '/home/ubuntu/UIUC_CCA/stress_cpu.py'
-
-    subprocess.Popen(["python3", script_path])
-    return 'CPU stress test started', 200
+    subprocess.Popen(["python3", "stress_cpu.py"])
+    return 'CPU stress started', 200
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
